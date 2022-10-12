@@ -15,4 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    // ↑views[welcom]の画面(=ララベル画面)
 });
+
+Route::get('/comments/{value}', [App\Http\Controllers\calcs::class, 'result']);
+Route::get('/comments/freeword/{value}', [App\Http\Controllers\calcs::class, 'result']);
+Route::get('/comments/random', [App\Http\Controllers\calcs::class, 'result']);
